@@ -1,5 +1,5 @@
 //Included packages needed for this application
-const GenMark = require("./utils/generateMarkdown");
+const genMark = require("./utils/generateMarkdown");
 const inquirer = require('inquirer');
 const fs = require("fs");
 //Created an array of questions for user input
@@ -10,38 +10,38 @@ const questions = [
         message: "What is your readme title?",
     },
     {
-        name: "Description",
+        name: "description",
         type: "input",
         message: "What is your project description?"
     },
     {
-        name: "Installation",
+        name: "installation",
         type: "input",
         message: "What is the installation instructions?"
     },
     {
-        name: "Usage",
+        name: "usage",
         type: "input",
         message: "What is the usage information?"
     },
     {
-        name: "License",
-        type: "checkbox",
+        name: "license",
+        type: "list",
         message: "What is the license?",
-        choices: ["Engineer", "Intern", "Manager"]
+        choices: ["Apache 2.0 License", "CC0", "GNU GPL v3", "The Hippocratic License 2.1", "The MIT License", "Mozilla Public License 2.0", "The Do What the Fuck You Want to Public License"]
     },
     {
-        name: "Contributing",
+        name: "contributing",
         type: "input",
         message: "How do people contribute?"
     },
     {
-        name: "Tests",
+        name: "tests",
         type: "input",
         message: "How do people test?"
     },
     {
-        name: "Questions",
+        name: "questions",
         type: "input",
         message: "How would they ask you questions?"
     },
@@ -63,7 +63,20 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            replaceLicense(answers);
+        })
+        .catch((err) => {
+            if (err.isTtyError) {
+                console.log("Prompt couldn't be rendered in the current environment!");
+            } else {
+                console.log("Something went wrong!");
+            }
+        });
+}
 
 // Function call to initialize app
 init();
