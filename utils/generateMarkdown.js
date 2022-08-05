@@ -93,13 +93,13 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
   
-  ## Table of Contents
-  [Example](#description)
-  [Example2](#dnstallation)
-  [Third Example](#usage)
-  [Fourth Example](#contributing)
-  [Fourth Example](#tests)
-  [Fourth Example](#questions)
+  # Table of Contents
+  [Description](#description)
+  [Installation](#dnstallation)
+  [Usage](#usage)
+  [Contributing](#contributing)
+  [Tests](#tests)
+  [Questions](#questions)
 
   ## Description
 
@@ -129,7 +129,7 @@ function generateMarkdown(data) {
 
   My [GitHub](https://github.com/${data.github})
 
-`;
+` + renderLicenseSection(data.license);
 }
 
 module.exports = generateMarkdown;

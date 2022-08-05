@@ -1,5 +1,5 @@
 //Included packages needed for this application
-const genMark = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require('inquirer');
 const fs = require("fs");
 //Created an array of questions for user input
@@ -59,7 +59,10 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    // fs.writeFileSync
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+      });
 }
 
 // TODO: Create a function to initialize app
@@ -67,7 +70,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            replaceLicense(answers);
+            writeToFile("./dev/README.md", generateMarkdown(answers));
         })
         .catch((err) => {
             if (err.isTtyError) {
