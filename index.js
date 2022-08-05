@@ -1,64 +1,66 @@
-// TODO: Include packages needed for this application
+//Included packages needed for this application
 const GenMark = require("./utils/generateMarkdown");
 const inquirer = require('inquirer');
 const fs = require("fs");
-// TODO: Create an array of questions for user input
+//Created an array of questions for user input
 const questions = [
     {
         name: "title",
         type: "input",
-        message: "What is your managers name?",
+        message: "What is your readme title?",
     },
     {
         name: "Description",
         type: "input",
-        message: "What is their ID number?"
+        message: "What is your project description?"
     },
     {
         name: "Installation",
         type: "input",
-        message: "What is their Email?"
+        message: "What is the installation instructions?"
     },
     {
         name: "Usage",
         type: "input",
-        message: "What is their office number?"
+        message: "What is the usage information?"
     },
     {
         name: "License",
         type: "checkbox",
-        message: "What is their Email?",
+        message: "What is the license?",
         choices: ["Engineer", "Intern", "Manager"]
     },
     {
         name: "Contributing",
         type: "input",
-        message: "What is their Email?"
+        message: "How do people contribute?"
     },
     {
         name: "Tests",
         type: "input",
-        message: "What is their Email?"
+        message: "How do people test?"
     },
     {
         name: "Questions",
         type: "input",
-        message: "What is their Email?"
+        message: "How would they ask you questions?"
     },
     {
-        name: "Questions",
+        name: "github",
         type: "input",
-        message: "What is their Email?"
+        message: "What is your GitHub username?"
     },
     {
-        name: "Questions",
+        name: "eamil",
         type: "input",
-        message: "What is their Email?"
+        message: "What is your email?"
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    // fs.writeFileSync
+}
 
 // TODO: Create a function to initialize app
 function init() {}
