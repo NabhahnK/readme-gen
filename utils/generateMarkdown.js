@@ -2,37 +2,37 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
-    case "Apache 2.0 License":
+    case `Apache 2.0 License`:
       // code block
-      license = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+      return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
       break;
-    case "CC0":
+    case `CC0`:
       // code block
-      license = "[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)";
+      return `[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)`;
       break;
-    case "GNU GPL v3":
+    case `GNU GPL v3`:
       // code block
-      license = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
       break;
-    case "The Hippocratic License 2.1":
+    case `The Hippocratic License 2.1`:
       // code block
-      license = "[![License: Hippocratic 2.1](https://img.shields.io/badge/License-Hippocratic_2.1-lightgrey.svg)](https://firstdonoharm.dev)";
+      return `[![License: Hippocratic 2.1](https://img.shields.io/badge/License-Hippocratic_2.1-lightgrey.svg)](https://firstdonoharm.dev)`;
       break;
-    case "The MIT License":
+    case `The MIT License`:
       // code block
-      license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       break;
-    case "Mozilla Public License 2.0":
+    case `Mozilla Public License 2.0`:
       // code block
-      license = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+      return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
       break;
-    case "The Do What the Fuck You Want to Public License":
+    case `The Do What the Fuck You Want to Public License`:
       // code block
-      license = "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)";
+      return `[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)`;
       break;
     default:
       // code block
-      license = "";
+      return ``;
   }
 }
 
@@ -40,37 +40,37 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch (license) {
-    case "Apache 2.0 License":
+    case `Apache 2.0 License`:
       // code block
-      license = "https://opensource.org/licenses/Apache-2.0";
+      return `https://opensource.org/licenses/Apache-2.0`;
       break;
-    case "CC0":
+    case `CC0`:
       // code block
-      license = "http://creativecommons.org/publicdomain/zero/1.0/";
+      return `http://creativecommons.org/publicdomain/zero/1.0/`;
       break;
-    case "GNU GPL v3":
+    case `GNU GPL v3`:
       // code block
-      license = "https://www.gnu.org/licenses/gpl-3.0";
+      return `https://www.gnu.org/licenses/gpl-3.0`;
       break;
-    case "The Hippocratic License 2.1":
+    case `The Hippocratic License 2.1`:
       // code block
-      license = "https://firstdonoharm.dev";
+      return `https://firstdonoharm.dev`;
       break;
-    case "The MIT License":
+    case `The MIT License`:
       // code block
-      license = "https://opensource.org/licenses/MIT";
+      return `https://opensource.org/licenses/MIT`;
       break;
-    case "Mozilla Public License 2.0":
+    case `Mozilla Public License 2.0`:
       // code block
-      license = "https://opensource.org/licenses/MPL-2.0";
+      return `https://opensource.org/licenses/MPL-2.0`;
       break;
-    case "The Do What the Fuck You Want to Public License":
+    case `The Do What the Fuck You Want to Public License`:
       // code block
-      license = "http://www.wtfpl.net/about/";
+      return `http://www.wtfpl.net/about/`;
       break;
     default:
       // code block
-      license = "";
+      return ``;
   }
 }
 
@@ -80,12 +80,13 @@ function renderLicenseSection(license) {
   lBagde = renderLicenseBadge(license);
   lLink = renderLicenseLink(license);
   if(!license) {
-    return "";
+    return ` `;
   } else {
     return `### License
     
-    ${lBagde}
-    ${lLink}`;
+  ${lBagde}
+  
+  ${lLink}`;
   }
 }
 
@@ -94,12 +95,12 @@ function generateMarkdown(data) {
   return `# ${data.title}
   
   # Table of Contents
-  [Description](#description)
-  [Installation](#dnstallation)
-  [Usage](#usage)
-  [Contributing](#contributing)
-  [Tests](#tests)
-  [Questions](#questions)
+  1. [Description](#description)
+  2. [Installation](#dnstallation)
+  3. [Usage](#usage)
+  4. [Contributing](#contributing)
+  5. [Tests](#tests)
+  6. [Questions](#questions)
 
   ## Description
 
