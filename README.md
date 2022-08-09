@@ -24,10 +24,6 @@
 
   You can just take the code and use it or change it.
 
-  ## Tests
-
-  
-
   ## Questions
 
    You can contact me by email.
