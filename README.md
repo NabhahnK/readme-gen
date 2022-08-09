@@ -14,21 +14,25 @@
 
   ## Installation
 
-  Clone this repo. Then at the file location open up a terminal and run npm i. That is to get the dependencies for the project to run.
+   Clone this repo. Then at the file location open up a terminal and run npm i. That is to get the dependencies for the project to run.
 
   ## Usage
 
-  To make use of this, type in "node index.js". Thne answer all the questions.
+  To make use of this, type in "node index.js". Then answer all the questions.
 
   ## Contributing
 
   You can just take the code and use it or change it.
 
+  ## Tests
+
+  
+
   ## Questions
 
-  You can contact me by email.
+   You can contact me by email.
 
-  You can send me any additional questions at my email undefined.
+  You can send me any additional questions at my email nabhahnk@gmail.com.
 
   My [GitHub](https://github.com/NabhahnK)
 
